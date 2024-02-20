@@ -1,0 +1,8 @@
+<div class='container p-3'>
+<h2><%= @task.title %></h2>
+<p><%= @task.details %></p>
+<%= check_box_tag 'completed', @task.completed ? true : false, @task.completed %>
+<%= link_to 'Back to list', tasks_path %>
+<%= link_to 'Edit this task', edit_task_path %>
+<%= link_to 'Delete this task', task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+</div>
